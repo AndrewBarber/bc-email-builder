@@ -1,0 +1,82 @@
+{
+  "name": "bc-email-builder",
+  "description": "A BigCommerce Email Builder CLI tool",
+  "version": "5.0.0",
+  "author": "Andrew A. Barber",
+  "bin": {
+    "email-builder": "./bin/run.js"
+  },
+  "bugs": "https://github.com/AndrewBarber/bc-email-builder/issues",
+  "dependencies": {
+    "@oclif/core": "^4",
+    "@oclif/plugin-help": "^6",
+    "@oclif/plugin-plugins": "^5",
+    "@space48/bigcommerce-api": "^0.3.1",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.4.5",
+    "inquirer": "^9.2.17",
+    "lodash": "^4.17.21",
+    "lodash.omit": "^4.5.0"
+  },
+  "devDependencies": {
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^4",
+    "@types/chai": "^4",
+    "@types/inquirer": "^9.0.7",
+    "@types/lodash": "^4.17.6",
+    "@types/lodash.omit": "^4.5.9",
+    "@types/mocha": "^10",
+    "@types/node": "^18",
+    "bun": "^1.1.18",
+    "chai": "^4",
+    "eslint": "^8",
+    "eslint-config-oclif": "^5",
+    "eslint-config-oclif-typescript": "^3",
+    "eslint-config-prettier": "^9",
+    "mocha": "^10",
+    "oclif": "^4",
+    "shx": "^0.3.3",
+    "ts-node": "^10",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/AndrewBarber/bc-email-builder",
+  "keywords": [
+    "bigcommerce",
+    "email",
+    "builder",
+    "bc"
+  ],
+  "license": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "oclif": {
+    "bin": "email-builder",
+    "dirname": "email-builder",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {}
+  },
+  "repository": "AndrewBarber/bc-email-builder",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "npx eslint . --ext .ts",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "npm run lint",
+    "prepack": "npx oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "npx oclif readme && git add README.md"
+  },
+  "types": "dist/index.d.ts"
+}
