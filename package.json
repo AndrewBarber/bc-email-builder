@@ -11,7 +11,7 @@
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
-    "@space48/bigcommerce-api": "^0.3.1",
+    "@space48/bigcommerce-api": "^0.3.3-alpha5",
     "chalk": "^5.3.0",
     "dotenv": "^16.4.5",
     "inquirer": "^9.2.17",

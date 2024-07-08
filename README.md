@@ -16,11 +16,11 @@ A BigCommerce Email Builder CLI Tool for downloading and publishing email templa
 
 <!-- usage -->
 ```sh-session
-$ npm install -g bc-email-builder
+$ npm install -g @andrewbarber/bc-email-builder
 $ email-builder COMMAND
 running command...
 $ email-builder (--version)
-bc-email-builder/0.1.0 darwin-arm64 node-v21.6.2
+@andrewbarber/bc-email-builder/0.1.0 darwin-arm64 node-v21.6.2
 $ email-builder --help [COMMAND]
 USAGE
   $ email-builder COMMAND
