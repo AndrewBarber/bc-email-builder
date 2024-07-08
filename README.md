@@ -20,7 +20,7 @@ $ npm install -g bc-email-builder
 $ email-builder COMMAND
 running command...
 $ email-builder (--version)
-bc-email-builder/5.0.0 darwin-arm64 node-v21.6.2
+bc-email-builder/0.1.0 darwin-arm64 node-v21.6.2
 $ email-builder --help [COMMAND]
 USAGE
   $ email-builder COMMAND
@@ -74,7 +74,7 @@ EXAMPLES
     $ email-builder download all --path ./email -o
 ```
 
-_See code: [src/commands/download.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v5.0.0/src/commands/download.ts)_
+_See code: [src/commands/download.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.1.0/src/commands/download.ts)_
 
 ## `email-builder help [COMMAND]`
 
@@ -129,7 +129,7 @@ EXAMPLES
     $ email-builder init --channelId 1 --storeHash jk0h5oo6h0 --clientId 1234567890 --accessToken 1234567890abcdefg
 ```
 
-_See code: [src/commands/init.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v5.0.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.1.0/src/commands/init.ts)_
 
 ## `email-builder plugins`
 
@@ -441,5 +441,5 @@ EXAMPLES
   $ email-builder publish
 ```
 
-_See code: [src/commands/publish.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v5.0.0/src/commands/publish.ts)_
+_See code: [src/commands/publish.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.1.0/src/commands/publish.ts)_
 <!-- commandsstop -->
