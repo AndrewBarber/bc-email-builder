@@ -20,7 +20,7 @@ $ npm install -g @andrewbarber/bc-email-builder
 $ email-builder COMMAND
 running command...
 $ email-builder (--version)
-@andrewbarber/bc-email-builder/0.2.1 darwin-arm64 node-v18.20.3
+@andrewbarber/bc-email-builder/0.2.2 linux-x64 node-v18.20.3
 $ email-builder --help [COMMAND]
 USAGE
   $ email-builder COMMAND
@@ -31,9 +31,7 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`email-builder download [EMAIL-TEMPLATE]`](#email-builder-download-email-template)
 * [`email-builder help [COMMAND]`](#email-builder-help-command)
-* [`email-builder init`](#email-builder-init)
 * [`email-builder plugins`](#email-builder-plugins)
 * [`email-builder plugins add PLUGIN`](#email-builder-plugins-add-plugin)
 * [`email-builder plugins:inspect PLUGIN...`](#email-builder-pluginsinspect-plugin)
@@ -44,37 +42,6 @@ USAGE
 * [`email-builder plugins uninstall [PLUGIN]`](#email-builder-plugins-uninstall-plugin)
 * [`email-builder plugins unlink [PLUGIN]`](#email-builder-plugins-unlink-plugin)
 * [`email-builder plugins update`](#email-builder-plugins-update)
-* [`email-builder publish [EMAIL-TEMPLATE]`](#email-builder-publish-email-template)
-
-## `email-builder download [EMAIL-TEMPLATE]`
-
-Download the email templates from the storefront
-
-```
-USAGE
-  $ email-builder download [EMAIL-TEMPLATE] -p <value> [-o]
-
-ARGUMENTS
-  EMAIL-TEMPLATE  [default: all] Email template to download from store
-
-FLAGS
-  -o, --overwrite     Overwrite existing email templates
-  -p, --path=<value>  (required) [default: .] Path to save the email template
-
-DESCRIPTION
-  Download the email templates from the storefront
-
-EXAMPLES
-  Download the abandoned cart email template to the email directory
-
-    $ email-builder download abandoned_cart_email --path ./email
-
-  Download all email templates to the email directory and overwrite existing templates
-
-    $ email-builder download all --path ./email -o
-```
-
-_See code: [src/commands/download.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.2.1/src/commands/download.ts)_
 
 ## `email-builder help [COMMAND]`
 
@@ -95,41 +62,6 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.5/src/commands/help.ts)_
-
-## `email-builder init`
-
-Initialize the environment variables for the email builder. 
-
-```
-USAGE
-  $ email-builder init [-t <value>] [-c <value>] [-i <value>] [-h <value>]
-
-FLAGS
-  -c, --channelId=<value>    Channel ID for the storefront (Default: All Channels)
-  -h, --storeHash=<value>    Store Hash for the storefront
-  -i, --clientId=<value>     Client ID for the API Token
-  -t, --accessToken=<value>  Access Token for the API Token
-
-DESCRIPTION
-  Initialize the environment variables for the email builder.
-
-  Before continuing, please make sure you've created or received a Store API account.
-  You'll need those credentials in order to generate the appropriate configurations.
-  The scope you'll need is: Information & Settings (Modify).	
-  You can find more information here. https://support.bigcommerce.com/s/article/Store-API-Accounts#creating
-
-
-EXAMPLES
-  Run the command in interactive mode
-
-    $ email-builder init
-
-  Run the command with flags (perfect for CI/CD)
-
-    $ email-builder init --channelId 1 --storeHash jk0h5oo6h0 --clientId 1234567890 --accessToken 1234567890abcdefg
-```
-
-_See code: [src/commands/init.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.2.1/src/commands/init.ts)_
 
 ## `email-builder plugins`
 
@@ -419,27 +351,4 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.3.4/src/commands/plugins/update.ts)_
-
-## `email-builder publish [EMAIL-TEMPLATE]`
-
-describe the command here
-
-```
-USAGE
-  $ email-builder publish [EMAIL-TEMPLATE] -p <value>
-
-ARGUMENTS
-  EMAIL-TEMPLATE  [default: all] Email template to publish to the store
-
-FLAGS
-  -p, --path=<value>  (required) [default: .] Path to save the email template
-
-DESCRIPTION
-  describe the command here
-
-EXAMPLES
-  $ email-builder publish
-```
-
-_See code: [src/commands/publish.ts](https://github.com/AndrewBarber/bc-email-builder/blob/v0.2.1/src/commands/publish.ts)_
 <!-- commandsstop -->
