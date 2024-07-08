@@ -1,5 +1,5 @@
 {
-  "name": "bc-email-builder",
+  "name": "@andrewbarber/bc-email-builder",
   "description": "A BigCommerce Email Builder CLI tool",
   "version": "0.1.0",
   "author": "Andrew A. Barber",

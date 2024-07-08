@@ -1,5 +1,5 @@
 import {writeFileSync} from 'node:fs'
-import {resolve} from 'node:path'
+import path, {resolve} from 'node:path'
 
 import {log} from '../messages.js'
 
@@ -11,7 +11,7 @@ interface EnvironmentInterface {
 }
 
 const generateConfig = ({accessToken, channelId, clientId, storeHash}: EnvironmentInterface) => {
-  const dir = resolve('.')
+  const dir = resolve(path.join(process.cwd(), '.'))
   const channelIdSelected = channelId || 0
   const configuration = `BC_CLIENT_ID=${clientId}
 BC_ACCESS_TOKEN=${accessToken}
