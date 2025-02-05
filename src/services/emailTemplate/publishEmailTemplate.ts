@@ -20,8 +20,7 @@ const publishEmailTemplate = async (templateName: string, path: string) => {
 
     const templates = isFetchAll ? EMAIL_TEMPLATE_TYPE_IDS : [templateName]
 
-    // eslint-disable-next-line unicorn/no-array-for-each
-    templates.forEach(async (emailTemplate) => {
+    for (const emailTemplate of templates){
       // Check if all email templates exist in the directory
       const emailTemplateDir = `${path}/${emailTemplate}`
       if (!fs.existsSync(emailTemplateDir)) {
@@ -54,7 +53,7 @@ const publishEmailTemplate = async (templateName: string, path: string) => {
       }
 
       log.success(messages.emailTemplatePublished(emailTemplate))
-    })
+    }
   } catch (error) {
     log.error((error as Error).toString())
   }

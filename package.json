@@ -1,7 +1,7 @@
 {
   "name": "@andrewbarber/bc-email-builder",
   "description": "A BigCommerce Email Builder CLI tool",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Andrew A. Barber",
   "bin": {
     "email-builder": "./bin/run.js"
