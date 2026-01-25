@@ -20,7 +20,7 @@ $ npm install -g @andrewbarber/bc-email-builder
 $ email-builder COMMAND
 running command...
 $ email-builder (--version)
-@andrewbarber/bc-email-builder/0.2.9 darwin-arm64 node-v25.2.1
+@andrewbarber/bc-email-builder/0.2.10 darwin-arm64 node-v25.2.1
 $ email-builder --help [COMMAND]
 USAGE
   $ email-builder COMMAND
