@@ -4,7 +4,7 @@
   "version": "0.2.8",
   "author": "Andrew A. Barber",
   "bin": {
-    "email-builder": "./bin/run.js"
+    "email-builder": "bin/run.js"
   },
   "bugs": "https://github.com/AndrewBarber/bc-email-builder/issues",
   "dependencies": {
@@ -68,7 +68,10 @@
     "topicSeparator": " ",
     "topics": {}
   },
-  "repository": "AndrewBarber/bc-email-builder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewBarber/bc-email-builder.git"
+  },
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "npx eslint . --ext .ts",
