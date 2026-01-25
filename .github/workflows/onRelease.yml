@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: latest
       - run: npm install
-      - uses: JS-DevTools/npm-publish@v4
+      - run: npm publish --provenance --access restricted
