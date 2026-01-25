@@ -16,4 +16,4 @@ jobs:
         with:
           node-version: latest
       - run: npm install
-      - run: npm publish --provenance --access restricted
+      - run: npm publish --provenance --access public
