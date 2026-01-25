@@ -9,7 +9,8 @@
     "moduleResolution": "node16",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "composite": true
   },
   "include": ["./src/**/*"],
   "ts-node": {
