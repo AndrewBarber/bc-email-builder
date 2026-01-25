@@ -5,6 +5,7 @@ import omit from 'lodash.omit'
 import fs from 'node:fs'
 
 import {log, messages} from '../messages.js'
+import {CHANNEL_ID} from '../auth/authConfig.js'
 dotenv.config()
 
 const bcClient = new Management.Client({
@@ -12,16 +13,13 @@ const bcClient = new Management.Client({
   storeHash: process.env.BC_STORE_HASH as string,
 })
 
-const BC_CHANNEL_ID = Number(process.env.BC_CHANNEL_ID)
-
 const downloadEmailTemplate = async (templateName: string, path: string, overwrite = false) => {
   try {
     const isFetchAll = templateName === 'all'
 
     if (isFetchAll) {
-      const emailTemplatesResponse = await getAllEmailTemplates(bcClient, {
-        channel_id: BC_CHANNEL_ID,
-      })
+      const queryParams = CHANNEL_ID === 0 ? {} : { channel_id: CHANNEL_ID }
+      const emailTemplatesResponse = await getAllEmailTemplates(bcClient, queryParams)
       if (!emailTemplatesResponse) return log.error(messages.noEmailTemplateFound(templateName))
 
       await Promise.all(
@@ -32,9 +30,8 @@ const downloadEmailTemplate = async (templateName: string, path: string, overwri
     }
 
     if (!isFetchAll) {
-      const emailTemplateResponse = await getEmailTemplate(bcClient, templateName, {
-        channel_id: BC_CHANNEL_ID,
-      })
+      const queryParams = CHANNEL_ID === 0 ? {} : { channel_id: CHANNEL_ID }
+      const emailTemplateResponse = await getEmailTemplate(bcClient, templateName, queryParams)
       if (!emailTemplateResponse) return log.error(messages.noEmailTemplateFound(templateName))
 
       await saveEmailTemplate(templateName, path, emailTemplateResponse, overwrite)

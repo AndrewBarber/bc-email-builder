@@ -2,7 +2,7 @@ import {Management} from '@space48/bigcommerce-api'
 
 import {getAllEmailTemplates} from '../emailTemplate/downloadEmailTemplate.js'
 import {log, messages} from '../messages.js'
-import {AuthConfig} from './authConfig.js'
+import {AuthConfig, CHANNEL_ID} from './authConfig.js'
 
 const checkCredentials = async (authConfig: AuthConfig): Promise<boolean> => {
   let checkStatus = true
@@ -20,7 +20,8 @@ const checkCredentials = async (authConfig: AuthConfig): Promise<boolean> => {
     storeHash: authConfig.storeHash,
   })
 
-  await getAllEmailTemplates(bcClient, {channel_id: 1})
+  const queryParams = CHANNEL_ID === 0 ? {} : { channel_id: CHANNEL_ID }
+  await getAllEmailTemplates(bcClient, queryParams)
     .then((response) => {
       if (!response) {
         checkStatus = false

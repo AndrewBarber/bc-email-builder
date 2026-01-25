@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import fs from 'node:fs'
 
 import {log, messages} from '../messages.js'
+import {CHANNEL_ID} from '../auth/authConfig.js'
 import {EMAIL_TEMPLATE_TYPE_IDS} from './emailTemplateTypes.js'
 dotenv.config()
 
@@ -11,8 +12,6 @@ const bcClient = new Management.Client({
   accessToken: process.env.BC_ACCESS_TOKEN as string,
   storeHash: process.env.BC_STORE_HASH as string,
 })
-
-const BC_CHANNEL_ID = Number(process.env.BC_CHANNEL_ID)
 
 const publishEmailTemplate = async (templateName: string, path: string) => {
   try {
@@ -77,13 +76,16 @@ const upsertEmailTemplate = async (
   bigCommerceApiClient: Management.Client,
   templateName: string,
   payload: Management.V3.Operations['PUT /marketing/email-templates/{template-name}']['parameters']['body'],
-) =>
-  bigCommerceApiClient.v3.put(`/marketing/email-templates/{template-name}`, {
+) => {
+  const queryParams = CHANNEL_ID === 0 ? {} : { channel_id: CHANNEL_ID }
+  
+  return bigCommerceApiClient.v3.put(`/marketing/email-templates/{template-name}`, {
     body: payload,
     path: {
-      channel_id: BC_CHANNEL_ID,
       'template-name': templateName,
     },
+    query: queryParams,
   })
+}
 
 export default publishEmailTemplate
