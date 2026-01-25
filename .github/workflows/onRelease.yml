@@ -16,6 +16,4 @@ jobs:
         with:
           node-version: latest
       - run: npm install
-      - uses: JS-DevTools/npm-publish@v3
-        with:
-          provenance: true
+      - uses: JS-DevTools/npm-publish@v4
